@@ -38,15 +38,16 @@ export default async function RevenueChart() {
             ))}
           </div>
 
-          {revenue.map((month) => (
+          {revenue.map((month,i) => (
             <div key={month.month} className="flex flex-col items-center gap-2">
               <div
+              key={i+1}
                 className="w-full rounded-md bg-blue-300"
                 style={{
                   height: `${(chartHeight / topLabel) * month.revenue}px`,
                 }}
               ></div>
-              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
+              <p key={i} className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
                 {month.month}
               </p>
             </div>
